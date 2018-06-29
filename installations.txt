@@ -1,0 +1,17 @@
+#Download and run the kali linux ova from offensive security for virtualbox
+https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-hyperv-image-download/
+
+#In virtualbox, click on the Kali Linux box and select settings-USB - uncheck "Enable USB controller"
+
+Now open Kali Linux box, username is root, password is toor
+
+#### Inside Kali Linux #####
+#Curl might be using ipv6 connection which is blocked by rvm. Make curl use ipv4. This will successfully install ruby 2.3.0 compatible with gauntlt.
+echo ipv4 >> ~/.curlrc
+
+#Add root to rvm group which isn't done by default during installation, restart machine to take effect
+usermod -a -G rvm root
+
+#Rvm is installed differently for root
+source /usr/local/rvm/scripts/rvm
+
